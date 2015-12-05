@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F1E55FC76B61DC22338A72BBEF731F7C5B4F164B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F1E55FC76B61DC22338A72BBEF731F7C5B4F164B" : 0,
+    "D379714768CD2FF1DBD4228BDEC5CB286094E7C6" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B04222D4-ED49-44B2-9A3E-76F0CD420C9C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F1E55FC76B61DC22338A72BBEF731F7C5B4F164B" : "fgcnetwork\/",
+    "D379714768CD2FF1DBD4228BDEC5CB286094E7C6" : "SwiftAnyPic\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FGCNetwork",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FGCNetwork\/FGCNetwork.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kwkhaw\/SwiftAnyPic.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D379714768CD2FF1DBD4228BDEC5CB286094E7C6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/forgottn\/fgcnetwork.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F1E55FC76B61DC22338A72BBEF731F7C5B4F164B"
+    }
+  ]
+}
