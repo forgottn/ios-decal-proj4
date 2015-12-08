@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ph9-py-Umf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ph9-py-Umf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -170,6 +170,37 @@
                                                     <constraint firstAttribute="height" constant="1" id="jGI-Ub-ZX5"/>
                                                 </constraints>
                                             </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="D5B-Kd-wS0">
+                                                <rect key="frame" x="0.0" y="601" width="600" height="286"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gametagChar" textLabel="Pug-pr-6CA" detailTextLabel="fU4-Gj-No0" style="IBUITableViewCellStyleValue1" id="409-iC-pt3">
+                                                        <rect key="frame" x="0.0" y="50" width="600" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="409-iC-pt3" id="tbY-Iv-3VV">
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Gamertag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pug-pr-6CA">
+                                                                    <rect key="frame" x="15" y="12" width="73" height="20"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Character" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fU4-Gj-No0">
+                                                                    <rect key="frame" x="513" y="12" width="72" height="20"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <sections/>
+                                            </tableView>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -182,9 +213,11 @@
                                             <constraint firstItem="GN1-l6-tr3" firstAttribute="centerX" secondItem="ZAm-kV-HHP" secondAttribute="centerX" id="GWc-5i-kx9"/>
                                             <constraint firstItem="jhB-Nu-Hxe" firstAttribute="centerX" secondItem="ZAm-kV-HHP" secondAttribute="centerX" id="INq-Fe-d9Q"/>
                                             <constraint firstItem="PKn-sO-7W8" firstAttribute="leading" secondItem="ZAm-kV-HHP" secondAttribute="leading" id="MKv-C0-plw"/>
+                                            <constraint firstItem="D5B-Kd-wS0" firstAttribute="leading" secondItem="ZAm-kV-HHP" secondAttribute="leading" id="N1c-bF-0iC"/>
                                             <constraint firstAttribute="trailing" secondItem="k9N-mN-nMu" secondAttribute="trailing" id="Qqg-1T-mKT"/>
                                             <constraint firstItem="2aR-d2-kCW" firstAttribute="top" secondItem="8KC-Uq-o2s" secondAttribute="bottom" constant="8" id="RXL-Ja-llz"/>
                                             <constraint firstItem="jhB-Nu-Hxe" firstAttribute="leading" secondItem="ZAm-kV-HHP" secondAttribute="leading" constant="30" id="SuT-nR-NeZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="D5B-Kd-wS0" secondAttribute="trailing" id="WS7-tX-ZUm"/>
                                             <constraint firstItem="GN1-l6-tr3" firstAttribute="top" secondItem="sHU-1n-SRJ" secondAttribute="bottom" constant="8" id="Xp6-m6-CHd"/>
                                             <constraint firstItem="9I6-VF-6fy" firstAttribute="leading" secondItem="ZAm-kV-HHP" secondAttribute="leading" id="aao-ta-Yz7"/>
                                             <constraint firstItem="9I6-VF-6fy" firstAttribute="top" secondItem="ZAm-kV-HHP" secondAttribute="top" id="bbW-AO-ztj"/>
@@ -200,11 +233,15 @@
                                             <constraint firstItem="8KC-Uq-o2s" firstAttribute="centerX" secondItem="ZAm-kV-HHP" secondAttribute="centerX" id="moP-ur-nFz"/>
                                             <constraint firstItem="GN1-l6-tr3" firstAttribute="leading" secondItem="ZAm-kV-HHP" secondAttribute="leading" id="obE-Wc-RKI"/>
                                             <constraint firstItem="jhB-Nu-Hxe" firstAttribute="top" secondItem="2aR-d2-kCW" secondAttribute="bottom" constant="8" id="r73-a8-pLh"/>
+                                            <constraint firstItem="D5B-Kd-wS0" firstAttribute="top" secondItem="k9N-mN-nMu" secondAttribute="bottom" constant="8" id="vei-ru-CSy"/>
+                                            <constraint firstAttribute="bottom" secondItem="D5B-Kd-wS0" secondAttribute="bottom" id="xBV-aS-1j8"/>
                                             <constraint firstItem="k9N-mN-nMu" firstAttribute="leading" secondItem="ZAm-kV-HHP" secondAttribute="leading" id="xE4-Q8-Sd4"/>
+                                            <constraint firstItem="D5B-Kd-wS0" firstAttribute="centerX" secondItem="ZAm-kV-HHP" secondAttribute="centerX" id="yrs-Na-z0H"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Xp6-m6-CHd"/>
+                                                <exclude reference="xBV-aS-1j8"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -223,6 +260,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="9W3-Rl-EiE" secondAttribute="trailing" constant="-20" id="03b-ZO-HtM"/>
                             <constraint firstItem="Fqd-NH-4JS" firstAttribute="top" secondItem="9W3-Rl-EiE" secondAttribute="bottom" id="8Rm-Jn-rK2"/>
+                            <constraint firstItem="Fqd-NH-4JS" firstAttribute="top" secondItem="D5B-Kd-wS0" secondAttribute="bottom" id="Re2-Am-GUw"/>
                             <constraint firstItem="ZAm-kV-HHP" firstAttribute="height" secondItem="9hh-rl-WPh" secondAttribute="height" id="jH5-d7-dCJ"/>
                             <constraint firstItem="9W3-Rl-EiE" firstAttribute="leading" secondItem="9hh-rl-WPh" secondAttribute="leadingMargin" constant="-20" id="ofh-rP-866"/>
                             <constraint firstItem="ZAm-kV-HHP" firstAttribute="width" secondItem="9hh-rl-WPh" secondAttribute="width" id="pff-MK-d8c"/>
@@ -244,6 +282,7 @@
                         <outlet property="editButton" destination="cAo-72-YNR" id="18U-ij-oxg"/>
                         <outlet property="followerLabel" destination="JHZ-i2-MkT" id="bgr-cx-pnJ"/>
                         <outlet property="fullNameLabel" destination="2aR-d2-kCW" id="WCq-gN-nFF"/>
+                        <outlet property="gameTableView" destination="D5B-Kd-wS0" id="qsw-Bw-8oR"/>
                         <outlet property="profileImageView" destination="8KC-Uq-o2s" id="c3o-H4-KyM"/>
                         <outlet property="regionLabel" destination="F5X-N0-8m0" id="mKz-zL-8gN"/>
                         <outlet property="scrollView" destination="GN1-l6-tr3" id="6nM-s7-aHB"/>
@@ -879,6 +918,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwm-Xc-dzG">
                                         <rect key="frame" x="8" y="27" width="584" height="76"/>
                                         <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                         <state key="normal" image="fb_login.png"/>
                                         <connections>
                                             <action selector="fbPressed:" destination="Ph9-py-Umf" eventType="touchUpInside" id="e9F-HT-puj"/>
@@ -1339,7 +1379,7 @@
         <scene sceneID="WnG-Bb-SxV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="10B-LT-Ol1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="oPs-0O-qYr"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="featured" id="oPs-0O-qYr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e9Q-6w-qjU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1382,8 +1422,8 @@
         <image name="twitter.png" width="390" height="74"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wc0-nj-Bcz"/>
-        <segue reference="lSV-EL-Ovd"/>
+        <segue reference="dlD-eM-Pff"/>
+        <segue reference="Qfm-UU-O0K"/>
         <segue reference="MJd-So-ROg"/>
     </inferredMetricsTieBreakers>
 </document>

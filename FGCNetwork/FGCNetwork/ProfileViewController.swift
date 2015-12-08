@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import MobileCoreServices
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     let imagePicker = UIImagePickerController()
     
@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     var games = [PFObject]()
     
+    var selectedIndex: Int!
+    
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var fullNameLabel: UILabel!
@@ -28,10 +30,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var gameTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        self.gameTableView.dataSource = self
+        self.gameTableView.delegate = self
+        self.gameTableView.hidden = true
         
         if isMyProfile {
             getPlayerAndGames(PFUser.currentUser()!)
@@ -52,6 +58,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             (object: PFObject?, error: NSError?) -> Void in
             if error == nil {
                 self.games = object!["players"] as! [PFObject]
+                if self.games.count > 0 {
+                    self.gameTableView.hidden = false
+                    self.selectedIndex = 0
+                }
                 self.profile = Player(data: object!)
                 self.profile.setBannerImage(self.bannerImageView)
                 self.profile.setProfileImage(self.profileImageView)
@@ -115,6 +125,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     }
                     //                    button.setTitleColor(UIColor.blackColor(), forState: .Normal)
                     //                    button.setTitle(object!["title"] as? String, forState: .Normal)
+                    button.tag = i
                     button.addTarget(self, action: "buttonAction:", forControlEvents: .TouchUpInside)
                     self.scrollView.addSubview(button)
                     x += button.frame.size.width
@@ -129,11 +140,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             x = view.bounds.width + 1
         }
         scrollView.contentSize = CGSizeMake(x, scrollView.frame.size.height)
+        self.gameTableView.reloadData()
     }
     
     func buttonAction(sender:UIButton!)
     {
-        print("Button tapped")
+        self.selectedIndex = sender.tag
+        self.gameTableView.reloadData()
     }
     
     func imageTapped(gestureRecognizer: UITapGestureRecognizer) {
@@ -236,6 +249,32 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         UIGraphicsEndImageContext()
         return newImage
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.gameTableView.dequeueReusableCellWithIdentifier("gametagChar", forIndexPath: indexPath)
+        if self.games.count > 0 {
+            self.games[selectedIndex].fetchIfNeededInBackgroundWithBlock{
+                (object: PFObject?, error: NSError?) -> Void in
+                if error == nil {
+                    cell.textLabel?.text = object!["gamertag"] as? String
+                    cell.detailTextLabel?.text = object!["character"] as? String
+                } else {
+                    print("Error: \(error!) \(error!.userInfo)")
+                }
+            }
+        }
+        
+        return cell
+        
     }
     
     // MARK: - Navigation
